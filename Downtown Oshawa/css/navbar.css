@@ -1,0 +1,135 @@
+.nav-menu {
+    position: absolute;
+    bottom: 0;
+    z-index: 3;
+    text-align: center;
+    width: 100%;
+    padding-bottom: 3px;
+    min-width: 80px;
+    max-height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-menu-button {
+    height: 35px;
+    margin: 0 5px;
+    padding: 7px 8px 7px 6px;
+    width: fit-content;
+    text-align: center;
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+}
+.nav-menu-button-text{
+    display: inline-block;
+    font-size: 18px;
+    position: relative;
+}
+.nav
+.nav-menu-button:hover {
+    background: rgba(200, 200, 200, 1);
+}
+
+.controls {
+    position: absolute;
+    bottom: 50px;
+    z-index: 2;
+    text-align: center;
+    width: 50%;
+    padding-bottom: 3px;
+    right: 25%;
+    left: 25%;
+    display: none;
+    grid-gap: 5px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-auto-rows: auto;
+}
+.ctrl, .ctrl_buildings  {
+    padding: 5px 5px;
+    width: available;
+    min-width: 150px;
+    border-radius: 10px;
+    height: available;
+    text-align: center;
+    background: white;
+    border: #6C207E 3px solid;
+    cursor: pointer;
+    color: black;
+}
+.ctrl:hover, .ctrl_buildings:hover {
+    background: rgba(200, 200, 200, 1);
+}
+
+.nav-menu-top {
+    position: absolute;
+    top: 1%;
+    right: 1%;
+    z-index: 5;
+    text-align: right;
+    float: right;
+
+    background-color: #ffffff;
+    border-radius: 8px;
+    border: 4px solid #00539B;
+
+    padding: 5px 10px;
+
+    /* Adjust for icon font offset */
+    padding-bottom: 3px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    min-width: 225px;
+}
+.nav-menu-top-button {
+    cursor: pointer;
+    color: black;
+}
+.nav-menu-top-button:hover, .nav-menu-top-button:hover .tooltiptext{
+    /*color: white;*/
+    visibility: visible;
+}
+.tooltiptext {
+    visibility: hidden;
+    width: fit-content;
+    background-color: #ffffff;
+    color: #000000;
+    text-align: center;
+    padding: 5px 5px;
+    border-radius: 6px;
+
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+}
+
+.hidden {
+    display: none;
+}
+
+.show {
+    display: inline-block;
+}
+
+#audio_elm {
+    position: relative;
+    display: inline-block;
+    visibility: hidden;
+    padding: 8px 0;
+    z-index: 1;
+    text-align: center;
+    height: 44px;
+    margin-right: 5px;
+}

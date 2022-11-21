@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Render Developments | Downtown Oshawa</title>
+    <meta name="description" content="Render Developments | Downtown Oshawa" />
+    <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
+    <style>@-ms-viewport { width: device-width; }</style>
+</head>
+<body>
+    <!-- <img src="tiles/eoic_map.png" usemap="#ontario_Map" width="100%" class="map">
+    <map name="ontario_Map">
+        <area target="" alt="Durham" title="Durham" href="" coords="542,699,554,730,536,741,513,749,563,871,578,885,728,832,704,777,667,795,642,745,628,760,616,742,610,771,550,639" shape="poly">
+        <area target="" alt="Kawartha Lakes" title="Kawartha Lakes" href="" coords="520,557,557,539,542,510,575,489,611,567,645,553,716,705,682,719,701,769,669,782,645,730,629,745,610,735,607,751,572,669" shape="poly">
+        <area target="" alt="Haliburton" title="Haliburton" href="" coords="565,452,614,557,763,484,770,498,796,487,702,295,562,363,597,435" shape="poly">
+        <area target="" alt="Peterborough" title="Peterborough" href="" coords="651,549,760,496,769,514,800,496,875,639,835,658,828,687,800,709,781,733,764,752,710,772,694,724,728,708" shape="poly">
+        <area target="" alt="Northumberland" title="Northumberland" href="" coords="713,780,733,825,906,771,876,702,898,690,878,645,842,662,835,687,778,750,744,769" shape="poly">
+        <area target="" alt="Prince Edward" title="Prince Edward" href="" coords="928,762,939,742,1047,705,1042,743,1101,721,1110,774,1045,808,957,792" shape="poly">
+        <area target="" alt="Hastings" title="Hastings" href="" coords="745,363,911,694,883,705,913,766,939,732,1045,692,1013,636,1023,623,986,586,966,538,951,529,844,316" shape="poly">
+        <area target="" alt="Lennox" title="Lennox" href="" coords="901,401,962,526,973,528,992,577,1042,630,1021,638,1055,685,1069,728,1146,672,1060,555,1034,567,1009,514,997,524,976,465,1011,443,969,367" shape="poly">
+        <area target="" alt="Renfrew" title="Renfrew" href="" coords="635,54,666,103,710,84,725,107,761,88,772,104,816,81,882,201,807,237,825,275,795,297,811,325,848,307,898,394,972,356,992,397,1023,382,1017,366,1069,348,1078,372,1172,263,1089,238,1036,140,907,107,822,63,692,50" shape="poly">
+        <area target="" alt="Frontenac" title="Frontenac" href="" coords="1003,406,1019,447,988,465,1000,509,1013,503,1039,556,1069,541,1151,671,1234,626,1223,579,1145,510,1061,356,1028,371,1036,385,1019,397" shape="poly">
+        <area target="" alt="Lanarc" title="Lanarc" href="" coords="1161,282,1084,379,1153,502,1176,476,1203,493,1239,429,1295,436,1303,408,1261,371,1251,355,1269,370" shape="poly">
+        <area target="" alt="Ottawa" title="Ottawa" href="" coords="1166,275,1281,372,1275,378,1307,400,1350,341,1356,352,1401,316,1378,277,1416,253,1382,197,1295,259,1269,261,1253,247,1216,230,1175,253,1181,264" shape="poly">
+        <area target="" alt="Leeds" title="Leeds" href="" coords="1178,486,1157,511,1231,574,1242,623,1301,598,1420,443,1348,355,1338,376,1319,401,1301,446,1282,443,1253,443,1231,476,1234,496,1211,506" shape="poly">
+        <area target="" alt="Stormont" title="Stormont" href="" coords="1359,359,1425,439,1563,357,1638,282,1604,219,1567,193,1529,231,1522,247,1488,263,1492,278,1460,295,1442,298,1404,328" shape="poly">
+        <area target="" alt="Prescott" title="Prescott" href="" coords="1388,196,1421,255,1386,280,1406,315,1441,289,1458,293,1480,273,1477,261,1515,245,1538,205,1565,188,1575,192,1606,217,1621,152,1559,132,1486,135,1458,160,1409,160,1405,179" shape="poly">
+    </map> -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/maphilight/1.4.0/jquery.maphilight.min.js"></script>
+    <script type="text/javascript" src="js/imageMapResizer.min.js"></script>
+    <script type="text/javascript">
+        $.fn.maphilight.defaults = {
+            fill: true,
+            fillColor: '00aab1',
+            fillOpacity: 0.2,
+            stroke: true,
+            strokeColor: '000000',
+            strokeOpacity: 0.6,
+            strokeWidth: 2,
+            fade: true,
+            alwaysOn: false,
+            neverOn: false,
+            groupBy: false,
+            wrapClass: true,
+            shadow: false,
+            shadowX: 0,
+            shadowY: 0,
+            shadowRadius: 6,
+            shadowColor: '000000',
+            shadowOpacity: 0.8,
+            shadowPosition: 'outside',
+            shadowFrom: false
+        }
+
+        $('map').imageMapResize();
+
+        $(function() {
+            $('.map').maphilight();
+        });
+    </script>
+</body>
+</html>
