@@ -1631,14 +1631,14 @@ function renderInit() {
         // Panorama not loaded
         
         // Display error if there is a bad texture
-        if (event.type == 'webgl error' || event.type == 'no webgl') {
-            anError();
-        } else if (event.type == 'webgl size error') {
-            anError(config.strings.textureSizeError.replace('%s', event.width).replace('%s', event.maxWidth));
-        } else {
-            anError(config.strings.unknownError);
-            throw event;
-        }
+        // if (event.type == 'webgl error' || event.type == 'no webgl') {
+        //     anError();
+        // } else if (event.type == 'webgl size error') {
+        //     anError(config.strings.textureSizeError.replace('%s', event.width).replace('%s', event.maxWidth));
+        // } else {
+        //     anError(config.strings.unknownError);
+        //     throw event;
+        // }
     }
 }
 
