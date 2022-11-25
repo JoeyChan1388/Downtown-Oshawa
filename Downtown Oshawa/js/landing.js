@@ -388,7 +388,7 @@ let viewer = pannellum.viewer("panorama", {
       showZoomCtrl: false,
       showFullscreenCtrl: false,
       autoLoad: true,
-      hotSpotDebug: true,
+      hotspotDebug: false,
       hotSpots: [
         {
           pitch: -12.4,
@@ -434,7 +434,7 @@ let viewer = pannellum.viewer("panorama", {
       showZoomCtrl: false,
       showFullscreenCtrl: false,
       autoLoad: true,
-      hotSpotDebug: true,
+      hotspotDebug: false,
       hotSpots: [
         {
           pitch: -6.3,
@@ -535,7 +535,7 @@ let viewer = pannellum.viewer("panorama", {
       showZoomCtrl: false,
       showFullscreenCtrl: false,
       autoLoad: true,
-      hotSpotDebug: true,
+      hotspotDebug: false,
       hotSpots: [
         {
           pitch: -6.51,
@@ -647,7 +647,7 @@ let viewer = pannellum.viewer("panorama", {
       showZoomCtrl: false,
       showFullscreenCtrl: false,
       autoLoad: true,
-      hotSpotDebug: true,
+      hotspotDebug: false,
       hotSpots: [
         {
           pitch: -8.395,
@@ -737,7 +737,7 @@ let viewer = pannellum.viewer("panorama", {
       showZoomCtrl: false,
       showFullscreenCtrl: false,
       autoLoad: true,
-      hotSpotDebug: true,
+      hotspotDebug: false,
       hotSpots: [
         {
           pitch: -7.617,
@@ -816,7 +816,7 @@ let viewer = pannellum.viewer("panorama", {
       showZoomCtrl: false,
       showFullscreenCtrl: false,
       autoLoad: true,
-      hotSpotDebug: true,
+      hotspotDebug: false,
       hotSpots: [
         {
           pitch: -11.293,
@@ -906,7 +906,7 @@ let viewer = pannellum.viewer("panorama", {
       showZoomCtrl: false,
       showFullscreenCtrl: false,
       autoLoad: true,
-      hotSpotDebug: true,
+      hotspotDebug: false,
       hotSpots: [
         {
           pitch: -3.735,
@@ -985,7 +985,7 @@ let viewer = pannellum.viewer("panorama", {
       showZoomCtrl: false,
       showFullscreenCtrl: false,
       autoLoad: true,
-      hotSpotDebug: true,
+      hotspotDebug: false,
       hotSpots: [
         {
           pitch: -6.404,
@@ -1086,7 +1086,7 @@ let viewer = pannellum.viewer("panorama", {
       showZoomCtrl: false,
       showFullscreenCtrl: false,
       autoLoad: true,
-      hotSpotDebug: true,
+      hotspotDebug: false,
       hotSpots: [
         {
           pitch: -9.460,
@@ -1121,7 +1121,7 @@ let viewer = pannellum.viewer("panorama", {
       showZoomCtrl: false,
       showFullscreenCtrl: false,
       autoLoad: true,
-      hotSpotDebug: true,
+      hotspotDebug: false,
       hotSpots: [
         {
           pitch: -10.295,
@@ -1211,7 +1211,7 @@ let viewer = pannellum.viewer("panorama", {
       showZoomCtrl: false,
       showFullscreenCtrl: false,
       autoLoad: true,
-      hotSpotDebug: true,
+      hotspotDebug: false,
       hotSpots: [
         {
           pitch: -26.245,
@@ -1312,7 +1312,7 @@ let viewer = pannellum.viewer("panorama", {
       showZoomCtrl: false,
       showFullscreenCtrl: false,
       autoLoad: true,
-      hotSpotDebug: true,
+      hotspotDebug: false,
       hotSpots: [
         {
           pitch: -11.124,
@@ -2090,6 +2090,54 @@ document.getElementById("cbHotSpot").addEventListener("change", function () {
     viewer.renderHotSpots();
   });
 });
+
+document.getElementById('cbHighRes').addEventListener('change', function () {
+	var tilesPath = 'tiles/';
+
+	if (document.getElementById('cbHighRes').checked) {
+		tilesPath = 'tiles/';
+	} else {
+		tilesPath = 'tiles/low_resolution/';
+	}
+
+	//console.log(viewer.getConfig().scenes)
+
+	for (const[key, value] of Object.entries(viewer.getConfig().scenes)) {
+		var sceneConfig = value
+
+		// Get filename from end of panorama path
+		var filename = sceneConfig.panorama.substring(sceneConfig.panorama.lastIndexOf('/') + 1);
+
+		// Replace the config panorama path with the new path 
+		sceneConfig.panorama = tilesPath + filename;
+
+		// Overwrite the scene config with the updated path
+		viewer.addScene(value, sceneConfig);
+	}
+
+	// Alt Solution
+	// viewer.getConfig(scene).panorama =
+    //         (document.getElementById('cbLowRes').checked ? 'tiles/low_resolution/' : 'tiles/') +
+    //         viewer.getConfig(scene).panorama.split("/").pop();
+
+	// Single Scene
+	// var sceneConfig = viewer.getConfig().scenes[viewer.getScene()];
+
+	// // Get filename from end of panorama path
+	// var filename = sceneConfig.panorama.substring(sceneConfig.panorama.lastIndexOf('/') + 1);
+
+	// // Replace the config panorama path with the new path 
+	// sceneConfig.panorama = tilesPath + filename;
+
+	// // Overwrite the scene config with the updated path
+	// viewer.addScene(viewer.getScene(), sceneConfig);
+
+	// Refresh the viewer
+	viewer.loadScene(viewer.getScene());
+});
+
+// Manually execute the changed event for cbHighRes
+document.getElementById('cbHighRes').dispatchEvent(new Event('change'));
 
 //Side bar - Search - Clear Filter
 function clearFilter() {
